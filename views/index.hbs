@@ -1,0 +1,314 @@
+<script>localStorage.clear();</script>
+<header class="masthead">
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+    </video>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <hr class="new">
+                <h5 class="display-4">"Viaja no para escapar de la vida sino para que la vida no se te escape."</h5>
+                <hr class="new">
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container marketing">
+    <br>
+    <section class="search-sec">
+        <div class="container">
+            <form method="post" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-3 col-sm-12 p-0">
+                                <input type="text" class="form-control search-slt useFontAwesomeFamily"
+                                    placeholder="&#xf3c5; Pais, Ciudad">
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <a href="/search" type="button" class="btn btn-danger wrn-btn"
+                                    style="margin: auto;">Buscar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <br>
+
+    <div class="d-flex h-100 text-center align-items-center"><br><br>
+        <div class="w-100">
+            <h3>Proceso de compra</h3>
+            <p>Nunca habia sido tan sencillo viajar, con solo 4 simples pasos.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Card Search -->
+        <div class="col-md-3">
+            <!-- Card Wider -->
+
+            <div class="card mb-4 shadow-sm">
+
+                <!-- Card image -->
+                <div class="view overlay">
+                    <img class="card-img-top" style="height:16rem;" src="/img/ae4e116bb2834056a8b0074deac9cd99.jpg"
+                        alt="Card image cap">
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h5 class="card-title">Busca un destino perfecto</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Buy -->
+        <div class="col-md-3">
+            <!-- Card Wider -->
+
+            <div class="card mb-4 shadow-sm">
+
+                <!-- Card image -->
+                <div class="view overlay">
+                    <img class="card-img-top" style="height:16rem;" src="/img/d571228f0aaf04adf77c2eac60991d04.jpg"
+                        alt="Card image cap">
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h5 class="card-title">Compra el boleto con tu cuenta Paypal</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Validate qr -->
+        <div class="col-md-3">
+            <!-- Card Wider -->
+
+            <div class="card mb-4 shadow-sm">
+
+                <!-- Card image -->
+                <div class="view overlay">
+                    <img class="card-img-top" style="height:16rem;" src="/img/c8dc73e751f080acd5af6ced8cfadf08.jpg"
+                        alt="Card image cap">
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h5 class="card-title">Escanea tu boleto con tu Smartphone</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card GO to -->
+        <div class="col-md-3">
+            <!-- Card Wider -->
+
+            <div class="card mb-4 shadow-sm">
+
+                <!-- Card image -->
+                <div class="view overlay">
+                    <img class="card-img-top" style="height:16rem;" src="/img/3b00dc6ae81ae070e1f625c666b8bf29.jpg"
+                        alt="Card image cap">
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h5 class="card-title">Haz maletas.. que nos vamos de viaje</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex h-100 text-center align-items-center"><br><br><br><br>
+        <div class="w-100">
+            <h3>Destinos mas buscados</h3>
+            <hr>
+        </div><br><br>
+    </div>
+    <div class="row">
+        {{#each data}}
+        <div class="col-md-4">
+            <!-- Card Wider -->
+            <div class="card mb-4 shadow-sm">
+
+                <!-- Card image -->
+                <div class="view overlay">
+                    <img data-toggle="modal" data-target="#modal{{this.id}}" class="card-img-top" style="height:16rem;"
+                        src="{{this.path}}" alt="Card image cap">
+                </div>
+                <!-- Card content -->
+                <div class="card-body">
+
+                    <!-- Title -->
+                    <h5 class="card-title" data-toggle="modal" data-target="#modal{{this.id}}">{{this.name}}</h5>
+                    <hr>
+
+                    <!-- Text -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a class="cd-add-to-cart js-cd-add-to-cart justify-content-end" data-name="{{this.name}}"
+                            data-description="{{this.description}}" data-price="{{this.price}}"
+                            data-path="{{this.path}}">${{this.price}}
+                        </a>
+                        <a class="cd-add-to-cart justify-content-end" data-toggle="modal"
+                            data-target="#modal{{this.id}}">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade right" id="modal{{this.id}}" tabindex="-1" role="dialog"
+                        aria-labelledby="{{this.url}}ModalPreviewLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-fluid" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="{{this.url}}ModalPreviewLabel">{{this.category}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container-fliud">
+                                        <div class="wrapper row">
+                                            <div class="col-auto"></div>
+                                            <div class="preview col-md-6">
+                                                <div class="preview-pic tab-content">
+                                                    <div class="tab-pane active" id="pic-1{{this.id}}">
+                                                        <img class="card-img-top" src="{{this.path}}"
+                                                            alt="Card image cap">
+                                                    </div>
+                                                    <div class="tab-pane" id="pic-2{{this.id}}">
+                                                        <img class="card-img-top" src="{{this.path1}}"
+                                                            alt="Card image cap">
+                                                    </div>
+                                                    <div class="tab-pane" id="pic-3{{this.id}}">
+                                                        <img class="card-img-top" src="{{this.path2}}"
+                                                            alt="Card image cap">
+                                                    </div>
+                                                    <div class="tab-pane" id="pic-4{{this.id}}">
+                                                        <img class="card-img-top" src="{{this.path3}}"
+                                                            alt="Card image cap">
+                                                    </div>
+                                                    <div class="tab-pane" id="pic-5{{this.id}}">
+                                                        <img class="card-img-top" src="{{this.path4}}"
+                                                            alt="Card image cap"></a>
+                                                    </div>
+                                                </div>
+                                                <ul class="preview-thumbnail nav nav-tabs">
+                                                    <li class="active">
+                                                        <a data-target="#pic-1{{this.id}}" data-toggle="tab">
+                                                            <img class="card-img-top" src="{{this.path}}"
+                                                                alt="Card image cap"></a></li>
+                                                    <li>
+                                                        <a data-target="#pic-2{{this.id}}" data-toggle="tab">
+                                                            <img class="card-img-top" src="{{this.path1}}"
+                                                                alt="Card image cap"></a></li>
+                                                    <li>
+                                                        <a data-target="#pic-3{{this.id}}" data-toggle="tab">
+                                                            <img class="card-img-top" src="{{this.path2}}"
+                                                                alt="Card image cap"></a></li>
+                                                    <li>
+                                                        <a data-target="#pic-4{{this.id}}" data-toggle="tab">
+                                                            <img class="card-img-top" src="{{this.path3}}"
+                                                                alt="Card image cap"></a></li>
+                                                    <li>
+                                                        <a data-target="#pic-5{{this.id}}" data-toggle="tab">
+                                                            <img class="card-img-top" src="{{this.path4}}"
+                                                                alt="Card image cap"></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-auto"></div>
+                                            <div class="details col-md-4">
+                                                <br><br><br>
+                                                <h2 class="product-title"><b>{{this.name}}</b></h2>
+                                                <p>1 <i class="fas fa-user-friends"></i>
+                                                    <i class="fas fa-hotel"></i>
+                                                    <i class="fas fa-bus"></i></p>
+                                                <h2 class="price"><span>${{this.price}}</span></h2>
+                                                <div class="rating">
+                                                    <div class="stars">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <span class="review-no">Calificaciones</span>
+                                                </div>
+                                                <hr>
+
+                                                <p class="product-description">{{this.description}}</p>
+                                                <hr>
+                                                <button type="button"
+                                                    class="btn btn-success js-cd-add-to-cart justify-content-end"
+                                                    data-name="{{this.name}}" data-description="{{this.description}}"
+                                                    data-price="{{this.price}}" data-path="{{this.path}}">
+                                                    Agregar al carrito <i class="fas fa-shopping-cart"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Modal -->
+
+                </div>
+                <!-- /Card content -->
+
+            </div>
+            <!-- Card Wider -->
+
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="cd-cart cd-cart--empty js-cd-cart">
+        <a class="cd-cart__trigger text-replace">
+            <ul class="cd-cart__count">
+                <!-- cart items count -->
+                <li>0</li>
+                <li>0</li>
+            </ul> <!-- .cd-cart__count -->
+        </a>
+
+        <div class="cd-cart__content">
+            <div class="cd-cart__layout">
+                <header class="cd-cart__header">
+                    <h2>Cart</h2>
+                    <span class="cd-cart__undo">Item removed. <a>Undo</a></span>
+                </header>
+
+                <div class="cd-cart__body">
+                    <ul>
+                        <!-- products added to the cart will be inserted here using JavaScript -->
+                    </ul>
+                </div>
+
+                <footer class="cd-cart__footer">
+                    <a href="/cart" class="cd-cart__checkout">
+                        <em>Checkout - $<span>0</span>
+                            <svg class="icon icon--sm" viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor">
+                                    <line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12"
+                                        x2="21" y2="12" />
+                                    <polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        points="15,6 21,12 15,18 " />
+                                </g>
+                            </svg>
+                        </em>
+                    </a>
+                </footer>
+            </div>
+        </div> <!-- .cd-cart__content -->
+    </div>
+</div>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>

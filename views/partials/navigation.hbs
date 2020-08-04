@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><b>Route Pin </b><i class="fas fa-route fa-lg"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="navbar-nav ml-auto">
+        <form class="form-inline mt-2 mt-md-0">
+          {{#if user}}
+          <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+              Cuenta
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/success">Ver mis tickets</a>
+              <a class="dropdown-item" href="/users/logout">Cerrar Session</a>
+            </div>
+          </div>
+          {{else}}
+          <a href="/users/signin" class="navbar-brand">
+            <i class="far fa-user"></i> Ingresar
+          </a>
+        </form>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</nav>
